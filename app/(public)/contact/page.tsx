@@ -46,9 +46,9 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Us</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact ColdTrans UAE</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Have questions about our vans or services? We&apos;re here to help! Reach out to our team anytime.
+            Need cold transport solutions? Get in touch with our team for quotes, inquiries, or support. Available 24/7 for your urgent needs.
           </p>
         </div>
       </section>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                <p className="text-muted-foreground text-sm">+1 (555) 123-4567</p>
+                <p className="text-muted-foreground text-sm">+971 4 XXX XXXX</p>
               </CardContent>
             </Card>
 
@@ -73,7 +73,7 @@ export default function ContactPage() {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                <p className="text-muted-foreground text-sm">info@smartpath.com</p>
+                <p className="text-muted-foreground text-sm">info@coldtrans.ae</p>
               </CardContent>
             </Card>
 
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-muted-foreground text-sm">123 Adventure Road, CA 94000</p>
+                <p className="text-muted-foreground text-sm">Dubai & Abu Dhabi, UAE</p>
               </CardContent>
             </Card>
 
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   <Clock className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Hours</h3>
-                <p className="text-muted-foreground text-sm">24/7 Support Available</p>
+                <p className="text-muted-foreground text-sm">24/7 Emergency Support</p>
               </CardContent>
             </Card>
           </div>
@@ -106,7 +106,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Send us a Message</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Request a Quote or Inquiry</h2>
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold mb-2">

@@ -11,12 +11,14 @@ import { vans, services } from '@/lib/data'
 
 const bookingSchema = z.object({
   van_id: z.string().min(1, 'Please select a van'),
-  start_date: z.string().min(1, 'Start date is required'),
-  end_date: z.string().min(1, 'End date is required'),
-  first_name: z.string().min(2, 'First name must be at least 2 characters'),
-  last_name: z.string().min(2, 'Last name must be at least 2 characters'),
+  pickup_location: z.string().min(3, 'Pickup location is required'),
+  dropoff_location: z.string().min(3, 'Drop-off location is required'),
+  date: z.string().min(1, 'Date is required'),
+  time: z.string().min(1, 'Time is required'),
+  temperature_requirement: z.string().min(1, 'Temperature requirement is required'),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
+  phone: z.string().min(9, 'Phone number must be at least 9 digits'),
   selected_services: z.array(z.string()).default([]),
 })
 
@@ -52,8 +54,8 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
     console.log('Booking submitted:', bookingData)
     
     toast({
-      title: 'Booking Submitted!',
-      description: 'Thank you for choosing SmartPath. Our team will contact you shortly to confirm your booking.',
+      title: 'Quote Request Submitted!',
+      description: 'Thank you! Our team will contact you shortly with a quote and confirm your cold transport booking.',
     })
   }
 
@@ -70,7 +72,7 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
       {/* Step 1: Select Van */}
       <Card>
         <CardHeader>
-          <CardTitle>Step 1: Select Your Van</CardTitle>
+          <CardTitle>Step 1: Select Your Chiller/Freezer Van</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
@@ -85,7 +87,7 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
               <option value="">Select a van...</option>
               {vans.map(van => (
                 <option key={van.id} value={van.id.toString()}>
-                  {van.name} - ${van.price}/day
+                  {van.name} - {van.specs.capacity} - AED {van.price}/day
                 </option>
               ))}
             </select>
@@ -101,11 +103,11 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <p className="text-muted-foreground">Capacity</p>
-                  <p className="font-semibold">{van.capacity} guests</p>
+                  <p className="font-semibold">{van.specs.capacity}</p>
                 </div>
                 <div>
-                  <p className="text-muted-foreground">Beds</p>
-                  <p className="font-semibold">{van.beds}</p>
+                  <p className="text-muted-foreground">Temperature</p>
+                  <p className="font-semibold">{van.specs.temperature}</p>
                 </div>
               </div>
             </div>
@@ -113,50 +115,109 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
         </CardContent>
       </Card>
 
-      {/* Step 2: Select Dates */}
+      {/* Step 2: Pickup & Dropoff Locations */}
       <Card>
         <CardHeader>
-          <CardTitle>Step 2: Select Dates</CardTitle>
+          <CardTitle>Step 2: Delivery Details</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <div>
+            <label htmlFor="pickup_location" className="block text-sm font-semibold mb-2">
+              Pickup Location
+            </label>
+            <input
+              id="pickup_location"
+              type="text"
+              placeholder="Enter pickup location in UAE"
+              {...register('pickup_location')}
+              className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+            />
+            {errors.pickup_location && (
+              <p className="text-sm text-destructive mt-1">{errors.pickup_location.message}</p>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="dropoff_location" className="block text-sm font-semibold mb-2">
+              Drop-off Location
+            </label>
+            <input
+              id="dropoff_location"
+              type="text"
+              placeholder="Enter drop-off location in UAE"
+              {...register('dropoff_location')}
+              className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+            />
+            {errors.dropoff_location && (
+              <p className="text-sm text-destructive mt-1">{errors.dropoff_location.message}</p>
+            )}
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="start_date" className="block text-sm font-semibold mb-2">
-                Start Date
+              <label htmlFor="date" className="block text-sm font-semibold mb-2">
+                Date Required
               </label>
               <input
-                id="start_date"
+                id="date"
                 type="date"
-                {...register('start_date')}
+                {...register('date')}
                 className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
               />
-              {errors.start_date && (
-                <p className="text-sm text-destructive mt-1">{errors.start_date.message}</p>
+              {errors.date && (
+                <p className="text-sm text-destructive mt-1">{errors.date.message}</p>
               )}
             </div>
 
             <div>
-              <label htmlFor="end_date" className="block text-sm font-semibold mb-2">
-                End Date
+              <label htmlFor="time" className="block text-sm font-semibold mb-2">
+                Time Required
               </label>
               <input
-                id="end_date"
-                type="date"
-                {...register('end_date')}
+                id="time"
+                type="time"
+                {...register('time')}
                 className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
               />
-              {errors.end_date && (
-                <p className="text-sm text-destructive mt-1">{errors.end_date.message}</p>
+              {errors.time && (
+                <p className="text-sm text-destructive mt-1">{errors.time.message}</p>
               )}
             </div>
           </div>
         </CardContent>
       </Card>
 
-      {/* Step 3: Select Services */}
+      {/* Step 3: Temperature Requirement */}
       <Card>
         <CardHeader>
-          <CardTitle>Step 3: Add Services (Optional)</CardTitle>
+          <CardTitle>Step 3: Temperature Requirement</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <label htmlFor="temperature_requirement" className="block text-sm font-semibold mb-2">
+              Required Temperature Range
+            </label>
+            <select
+              id="temperature_requirement"
+              {...register('temperature_requirement')}
+              className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+            >
+              <option value="">Select temperature range...</option>
+              <option value="frozen">Frozen (-18°C to -25°C)</option>
+              <option value="chilled">Chilled (-5°C to +5°C)</option>
+              <option value="ambient">Ambient (+5°C to +15°C)</option>
+            </select>
+            {errors.temperature_requirement && (
+              <p className="text-sm text-destructive mt-1">{errors.temperature_requirement.message}</p>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Step 4: Select Services */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Step 4: Add Services (Optional)</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -185,42 +246,25 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
         </CardContent>
       </Card>
 
-      {/* Step 4: Contact Information */}
+      {/* Step 5: Contact Information */}
       <Card>
         <CardHeader>
-          <CardTitle>Step 4: Your Information</CardTitle>
+          <CardTitle>Step 5: Your Information</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label htmlFor="first_name" className="block text-sm font-semibold mb-2">
-                First Name
-              </label>
-              <input
-                id="first_name"
-                type="text"
-                {...register('first_name')}
-                className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-              />
-              {errors.first_name && (
-                <p className="text-sm text-destructive mt-1">{errors.first_name.message}</p>
-              )}
-            </div>
-
-            <div>
-              <label htmlFor="last_name" className="block text-sm font-semibold mb-2">
-                Last Name
-              </label>
-              <input
-                id="last_name"
-                type="text"
-                {...register('last_name')}
-                className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-              />
-              {errors.last_name && (
-                <p className="text-sm text-destructive mt-1">{errors.last_name.message}</p>
-              )}
-            </div>
+          <div>
+            <label htmlFor="name" className="block text-sm font-semibold mb-2">
+              Company / Name
+            </label>
+            <input
+              id="name"
+              type="text"
+              {...register('name')}
+              className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+            />
+            {errors.name && (
+              <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
+            )}
           </div>
 
           <div>
@@ -257,7 +301,7 @@ export function BookingForm({ defaultVanId }: { defaultVanId?: string }) {
 
       {/* Submit Button */}
       <Button type="submit" size="lg" className="w-full">
-        Complete Booking
+        Request Quote & Book
       </Button>
     </form>
   )

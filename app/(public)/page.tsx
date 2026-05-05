@@ -1,118 +1,87 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, MapPin, Calendar, Users } from 'lucide-react'
+import { ArrowRight, Zap, Users, Globe } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
-import { vans, testimonials, bookingSteps } from '@/lib/data'
+import { vans, testimonials } from '@/lib/data'
 import { VanCard } from '@/components/van-card'
 import { TestimonialCard } from '@/components/testimonial-card'
-import { AnimatedSection } from '@/components/animated-section'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent" />
-        <div className="container mx-auto px-4 md:px-6 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Left Content */}
-            <AnimatedSection>
-              <div className="space-y-6">
-                <div className="space-y-2">
-                  <h1 className="text-4xl md:text-5xl font-bold text-foreground text-pretty">
-                    Your Freedom Starts Here
-                  </h1>
-                  <p className="text-xl text-muted-foreground text-pretty">
-                    Experience the ultimate van life with SmartPath. Premium vans, unforgettable adventures.
-                  </p>
-                </div>
-
-              <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/booking">
-                  <Button size="lg" className="w-full sm:w-auto">
-                    Book Your Van <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/fleet">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    View Our Fleet
-                  </Button>
-                </Link>
-              </div>
-
-              {/* Features */}
-              <div className="grid grid-cols-3 gap-4 pt-6">
-                <div>
-                  <p className="font-bold text-lg text-primary">500+</p>
-                  <p className="text-sm text-muted-foreground">Happy Travelers</p>
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-primary">4 Vans</p>
-                  <p className="text-sm text-muted-foreground">Premium Fleet</p>
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-primary">24/7</p>
-                  <p className="text-sm text-muted-foreground">Support</p>
-                </div>
-              </div>
-              </div>
-            </AnimatedSection>
-
-            {/* Right - Hero Image */}
-            <div className="relative h-96 md:h-full hidden md:block">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20 rounded-2xl" />
-              <div className="absolute inset-4 rounded-xl bg-gradient-to-b from-primary/30 to-transparent flex items-end justify-center overflow-hidden">
-                <div className="w-4/5 h-3/4 bg-background rounded-lg shadow-2xl flex items-center justify-center">
-                  <span className="text-muted-foreground">Van Adventure</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Quick Booking Section */}
-      <section className="py-12 bg-card border-y border-border">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="flex items-center gap-4">
-              <MapPin className="h-6 w-6 text-primary flex-shrink-0" />
-              <div>
-                <p className="text-sm text-muted-foreground">Pick-up Location</p>
-                <p className="font-semibold">Select Location</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Calendar className="h-6 w-6 text-primary flex-shrink-0" />
-              <div>
-                <p className="text-sm text-muted-foreground">Dates</p>
-                <p className="font-semibold">Check Availability</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <Users className="h-6 w-6 text-primary flex-shrink-0" />
-              <div>
-                <p className="text-sm text-muted-foreground">Travelers</p>
-                <p className="font-semibold">2-6 People</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Vans Section */}
-      <section className="py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Premium Fleet</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From cozy compact vans to luxurious full-size retreats, we have the perfect van for your adventure.
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-pretty">
+              Short-term refrigerated vehicle rental
+            </h1>
+            <p className="text-xl text-muted-foreground mb-8 text-pretty">
+              Our fleet is ready to go! Rent for short periods starting at 24 hours, with no commitment. For emergencies, breakdowns or peak periods, we&apos;re here to help.
+            </p>
+            <div className="inline-block">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Full Service hire</h3>
+              <p className="text-muted-foreground mb-6">
+                Enjoy a comprehensive service that covers all safety, maintenance and repair work.
               </p>
             </div>
-          </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Rental Quote Form Section */}
+      <section className="py-16 md:py-20 bg-card border-t border-b border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Get your Quote</h2>
+          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {/* Departure & Return */}
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">Departure</label>
+              <select className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground">
+                <option>Start of rental period</option>
+                <option>08:00</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+              </select>
+            </div>
+
+            {/* Return Date */}
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">Return</label>
+              <input type="date" className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground" />
+            </div>
+
+            {/* Duration */}
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">Duration</label>
+              <select className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground">
+                <option>Select duration</option>
+                <option>1 to 30 days</option>
+                <option>1 to 12 months</option>
+                <option>Over 12 months</option>
+              </select>
+            </div>
+
+            {/* Request Quote Button */}
+            <div className="flex items-end">
+              <Link href="/booking" className="w-full">
+                <Button size="lg" className="w-full">
+                  Request a quote
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <p className="text-center text-sm text-muted-foreground">For business customers</p>
+        </div>
+      </section>
+
+      {/* Our Range Section */}
+      <section className="py-16 md:py-24 bg-white">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Our range of refrigerated vehicles</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {vans.map((van) => (
@@ -130,44 +99,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="py-20 md:py-28 bg-card border-y border-border">
+      {/* Why Choose Us Section */}
+      <section className="py-16 md:py-24 bg-white border-t border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">How It Works</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Booking your perfect van adventure is quick and easy.
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Why rent from ColdTrans UAE?</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-0">
-            {bookingSteps.map((step, idx) => (
-              <div key={step.step} className="relative">
-                <div className="text-center mb-4">
-                  <div className="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mx-auto mb-4">
-                    {step.step}
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
-                </div>
-                {idx < bookingSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-1/2 w-full h-0.5 bg-border" />
-                )}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div>
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-primary" />
               </div>
-            ))}
+              <h3 className="font-bold text-foreground mb-2">Specialized Cold Transport</h3>
+              <p className="text-sm text-muted-foreground">
+                100% focused on refrigerated logistics with expertise across food, pharma, and catering sectors.
+              </p>
+            </div>
+
+            <div>
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Users className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">500+ Experts</h3>
+              <p className="text-sm text-muted-foreground">
+                Trained professionals delivering best-in-class service and support for all your transport needs.
+              </p>
+            </div>
+
+            <div>
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <Globe className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">24/7 Network Coverage</h3>
+              <p className="text-sm text-muted-foreground">
+                Comprehensive support across all UAE emirates with rapid response for emergencies and peak periods.
+              </p>
+            </div>
+
+            <div>
+              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                <ArrowRight className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Sustainable Solutions</h3>
+              <p className="text-sm text-muted-foreground">
+                Modern fleet with eco-friendly technology and commitment to green cold transport initiatives.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 md:py-28">
+      {/* Featured Testimonials */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">What Our Travelers Say</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Real stories from real adventurers who trusted SmartPath with their journey.
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">What Our Business Customers Say</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial) => (
@@ -177,16 +161,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 border-y border-border">
+      {/* Final CTA */}
+      <section className="py-16 md:py-24 bg-foreground text-white">
         <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Ready for Your Adventure?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Choose your perfect van and start creating memories that will last a lifetime.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">ColdTrans UAE also offers…</h2>
+          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
+            The network to promptly respond to your needs, 24-hour assistance, innovation in sustainable solutions, and dedicated support for your logistics challenges.
           </p>
-          <Link href="/booking">
-            <Button size="lg">
-              Book Your Van Now <ArrowRight className="ml-2 h-4 w-4" />
+          <Link href="/contact">
+            <Button size="lg" variant="outline" className="bg-white text-foreground hover:bg-white/90">
+              Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
         </div>

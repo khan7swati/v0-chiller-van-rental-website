@@ -1,98 +1,104 @@
 export const vans = [
   {
     id: 1,
-    name: 'Nomad Lite',
-    type: 'Compact Van',
-    price: 59,
-    capacity: 2,
-    beds: 1,
-    image: '/vans/nomad-lite.jpg',
-    description: 'Perfect for couples and solo travelers. Compact yet comfortable.',
+    name: 'Cool Box 1T',
+    type: 'Compact Chiller',
+    price: 350,
+    capacity: 1,
+    temperatureRange: '-18°C to +5°C',
+    image: '/vans/chiller-1ton.jpg',
+    description: 'Perfect for small food deliveries and light pharmaceutical shipments.',
     features: [
-      'Sleeping area',
-      'Kitchenette',
-      'Portable shower',
-      'Climate control',
-      'USB charging'
+      'Temperature control',
+      'Insulated cargo area',
+      'Digital display',
+      'Backup power system',
+      'GPS tracking',
+      'Real-time temperature monitoring'
     ],
     specs: {
-      length: '16 ft',
-      width: '6.5 ft',
-      fuelEconomy: '22 mpg'
+      capacity: '1 Ton',
+      volume: '3.5 m³',
+      fuelType: 'Diesel',
+      temperatureRange: '-18°C to +5°C'
     }
   },
   {
     id: 2,
-    name: 'Explorer Pro',
-    type: 'Mid-Size Van',
-    price: 89,
-    capacity: 4,
-    beds: 2,
-    image: '/vans/explorer-pro.jpg',
-    description: 'Ideal for small families. Spacious with modern amenities.',
+    name: 'CoolMax 3T',
+    type: 'Mid-Size Chiller',
+    price: 650,
+    capacity: 3,
+    temperatureRange: '-18°C to +5°C',
+    image: '/vans/chiller-3ton.jpg',
+    description: 'Ideal for catering logistics and medium food delivery operations.',
     features: [
-      'Two sleeping areas',
-      'Full kitchen',
-      'Bathroom with shower',
-      'Climate control',
-      'Entertainment system',
-      'Solar panels'
+      'Dual temperature zones',
+      'Insulated cargo area',
+      'Digital display',
+      'Backup power system',
+      'GPS tracking',
+      'Real-time temperature monitoring',
+      'AED Certified'
     ],
     specs: {
-      length: '22 ft',
-      width: '7.5 ft',
-      fuelEconomy: '18 mpg'
+      capacity: '3 Ton',
+      volume: '8.5 m³',
+      fuelType: 'Diesel',
+      temperatureRange: '-18°C to +5°C'
     }
   },
   {
     id: 3,
-    name: 'Adventure Plus',
-    type: 'Full-Size Van',
-    price: 129,
-    capacity: 6,
-    beds: 3,
-    image: '/vans/adventure-plus.jpg',
-    description: 'Maximum comfort and space for larger groups.',
+    name: 'FreezeNet 5T',
+    type: 'Large Deep Freezer',
+    price: 950,
+    capacity: 5,
+    temperatureRange: '-20°C to +2°C',
+    image: '/vans/freezer-5ton.jpg',
+    description: 'Heavy-duty deep freezer for large food & pharmaceutical shipments.',
     features: [
-      'Three sleeping areas',
-      'Fully equipped kitchen',
-      'Full bathroom with shower',
-      'Dining area',
-      'Climate control',
-      'Entertainment system',
-      'Outdoor storage',
-      'Solar charging system'
+      'Deep freezing capability',
+      'Dual temperature zones',
+      'Insulated cargo area',
+      'Digital display',
+      'Backup power system',
+      'GPS tracking',
+      'Real-time temperature monitoring',
+      'Ultra-insulated walls'
     ],
     specs: {
-      length: '26 ft',
-      width: '8 ft',
-      fuelEconomy: '15 mpg'
+      capacity: '5 Ton',
+      volume: '14 m³',
+      fuelType: 'Diesel',
+      temperatureRange: '-20°C to +2°C'
     }
   },
   {
     id: 4,
-    name: 'Luxury Retreat',
-    type: 'Premium Van',
-    price: 179,
-    capacity: 4,
-    beds: 2,
-    image: '/vans/luxury-retreat.jpg',
-    description: 'Premium experience with luxury amenities and finishes.',
+    name: 'ArctiFlex 8T',
+    type: 'Ultra-Low Freezer',
+    price: 1350,
+    capacity: 8,
+    temperatureRange: '-25°C to 0°C',
+    image: '/vans/freezer-8ton.jpg',
+    description: 'Premium ultra-low freezer for critical pharmaceutical and biotech transport.',
     features: [
-      'Premium bedding',
-      'Gourmet kitchen',
-      'Luxury bathroom',
-      'Smart home system',
-      'Climate control',
-      'Entertainment system',
-      'WiFi hotspot',
-      'Air suspension',
-      'Panoramic windows'
+      'Ultra-low freezing',
+      'Triple temperature zones',
+      'Insulated cargo area',
+      'Digital display',
+      'Dual backup power system',
+      'GPS tracking',
+      'Real-time temperature monitoring',
+      'Premium insulation',
+      '24/7 monitoring'
     ],
     specs: {
-      length: '24 ft',
-      width: '8 ft',
-      fuelEconomy: '16 mpg'
+      capacity: '8 Ton',
+      volume: '22 m³',
+      fuelType: 'Diesel',
+      temperatureRange: '-25°C to 0°C'
     }
   }
 ]
@@ -100,75 +106,75 @@ export const vans = [
 export const services = [
   {
     id: 1,
-    title: 'Airport Pickup & Dropoff',
-    description: 'Convenient delivery service to and from major airports.',
-    price: 49,
-    icon: 'Plane'
+    title: 'Food Delivery Transport',
+    description: 'Reliable cold chain for restaurants, catering, and food suppliers across UAE.',
+    price: 0,
+    icon: 'Truck'
   },
   {
     id: 2,
-    title: 'Insurance Coverage',
-    description: 'Comprehensive insurance protection for your peace of mind.',
-    price: 19,
-    icon: 'Shield'
+    title: 'Pharmaceutical Logistics',
+    description: 'Temperature-controlled transport for medicines and medical supplies.',
+    price: 0,
+    icon: 'Package'
   },
   {
     id: 3,
-    title: 'GPS Navigation System',
-    description: 'Advanced navigation system with offline maps.',
-    price: 12,
-    icon: 'Map'
+    title: 'Catering Event Services',
+    description: 'Full event refrigeration solutions for weddings, conferences, and corporate events.',
+    price: 0,
+    icon: 'UtensilsCrossed'
   },
   {
     id: 4,
-    title: 'Camping Package',
-    description: 'Complete camping gear including tent and cooking equipment.',
-    price: 79,
-    icon: 'Tent'
+    title: 'Ice Cream & Frozen Goods',
+    description: 'Specialized transport for ice cream shops, frozen desserts, and frozen food products.',
+    price: 0,
+    icon: 'Snowflake'
   },
   {
     id: 5,
-    title: 'Pet Policy',
-    description: 'Travel with your furry friends. Pet-friendly vans available.',
-    price: 25,
-    icon: 'Heart'
+    title: '24/7 Emergency Transport',
+    description: 'Urgent same-day delivery for perishable goods and critical shipments.',
+    price: 0,
+    icon: 'Clock'
   },
   {
     id: 6,
-    title: 'Extra Driver',
-    description: 'Add additional drivers to your rental agreement.',
-    price: 15,
-    icon: 'Users'
+    title: 'Temperature Monitoring',
+    description: 'Real-time SMS and email alerts for temperature stability throughout transport.',
+    price: 0,
+    icon: 'Thermometer'
   }
 ]
 
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah Johnson',
+    name: 'Ahmed Al Mansoori',
     rating: 5,
-    text: 'Amazing experience! The van was clean, comfortable, and perfectly maintained. Highly recommend SmartPath for your next adventure!',
+    text: 'Reliable cold transport partner for our restaurant. Timely deliveries, perfect temperature control, and professional service every time!',
     image: '/avatars/sarah.jpg'
   },
   {
     id: 2,
-    name: 'Michael Chen',
+    name: 'Fatima Hussain',
     rating: 5,
-    text: 'Great customer service and fantastic vans. We explored the Pacific Coast Highway in style. Will definitely book again!',
+    text: 'We trust them with our pharmaceutical shipments. Their 24/7 monitoring and temperature consistency is unmatched in UAE.',
     image: '/avatars/michael.jpg'
   },
   {
     id: 3,
-    name: 'Emma Rodriguez',
+    name: 'Hassan Al-Zahra',
     rating: 5,
-    text: 'Perfect for our family road trip. The kids loved it and the van had all the amenities we needed. Worth every penny!',
+    text: 'Outstanding catering logistics support. Handled our 500-person event refrigeration flawlessly. Highly professional team!',
     image: '/avatars/emma.jpg'
   },
   {
     id: 4,
-    name: 'James Wilson',
+    name: 'Noor Al-Qassimi',
     rating: 5,
-    text: 'Flexible booking, competitive prices, and excellent support. SmartPath made our adventure truly unforgettable.',
+    text: 'Best ice cream delivery partner in Dubai. Their insulated vans keep products frozen perfectly. Competitive rates and reliable!',
     image: '/avatars/james.jpg'
   }
 ]
@@ -176,33 +182,33 @@ export const testimonials = [
 export const faqs = [
   {
     id: 1,
-    question: 'What is the minimum rental period?',
-    answer: 'The minimum rental period is 3 days. For longer adventures, ask about our weekly and monthly discount rates.'
+    question: 'What temperature ranges can you maintain?',
+    answer: 'Our vans maintain temperatures from -25°C to +5°C depending on van type. All vans are monitored in real-time to ensure consistency.'
   },
   {
     id: 2,
-    question: 'Is fuel included in the rental?',
-    answer: 'Fuel is not included. You pay for the fuel you use. We provide the vans with a full tank and you return it full.'
+    question: 'Can I get same-day delivery?',
+    answer: 'Yes! We offer 24/7 emergency transport for urgent deliveries across Dubai, Abu Dhabi, and Sharjah with 2-4 hour response time.'
   },
   {
     id: 3,
-    question: 'What is your cancellation policy?',
-    answer: 'Free cancellation up to 48 hours before your rental date. Cancellations within 48 hours are subject to a 50% fee.'
+    question: 'Do you provide temperature monitoring?',
+    answer: 'Absolutely. All shipments include real-time GPS tracking and temperature alerts sent via SMS and email throughout transport.'
   },
   {
     id: 4,
-    question: 'Do you provide cooking equipment?',
-    answer: 'Yes, all our vans come with basic cooking equipment. Premium vans include a full gourmet kitchen setup.'
+    question: 'What is your service coverage area?',
+    answer: 'We operate across all UAE emirates: Dubai, Abu Dhabi, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah.'
   },
   {
     id: 5,
-    question: 'What is the age requirement for drivers?',
-    answer: 'Drivers must be at least 21 years old with a valid driver&apos;s license. Additional insurance may apply for drivers under 25.'
+    question: 'Are your vans insured?',
+    answer: 'Yes, all vans are fully insured and certified for food and pharmaceutical transport. Cargo insurance available upon request.'
   },
   {
     id: 6,
-    question: 'Are there mileage limits?',
-    answer: 'No mileage limits on any of our rentals. Drive as much as you want across North America.'
+    question: 'How do I book a van?',
+    answer: 'Fill out our online quote form with your requirements, pickup/drop-off locations, and dates. We&apos;ll confirm availability within 1 hour.'
   }
 ]
 
@@ -210,26 +216,26 @@ export const bookingSteps = [
   {
     step: 1,
     title: 'Select Your Van',
-    description: 'Browse our fleet and choose the perfect van for your adventure.'
+    description: 'Choose the perfect chiller/freezer van based on your cargo capacity and temperature needs.'
   },
   {
     step: 2,
-    title: 'Choose Dates',
-    description: 'Pick your rental start and end dates with flexible scheduling.'
+    title: 'Provide Details',
+    description: 'Enter pickup location, drop-off location, date, time, and specific temperature requirements.'
   },
   {
     step: 3,
-    title: 'Add Services',
-    description: 'Select optional add-ons like insurance, GPS, or camping gear.'
+    title: 'Get Instant Quote',
+    description: 'Receive competitive pricing instantly. No hidden charges, transparent billing.'
   },
   {
     step: 4,
-    title: 'Review & Confirm',
-    description: 'Review your booking details and complete payment securely.'
+    title: 'Confirm Booking',
+    description: 'Complete payment and receive booking confirmation with tracking details.'
   },
   {
     step: 5,
-    title: 'Enjoy Your Adventure',
-    description: 'Pick up your van and hit the road with confidence!'
+    title: 'Track & Monitor',
+    description: 'Track your van in real-time and receive temperature alerts throughout transport.'
   }
 ]
