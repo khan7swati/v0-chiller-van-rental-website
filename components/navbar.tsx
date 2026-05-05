@@ -19,10 +19,10 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
-            SP
+          <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-xs">
+            ❄️
           </div>
-          <span className="hidden sm:inline font-semibold text-lg text-foreground">SmartPath</span>
+          <span className="hidden sm:inline font-semibold text-lg text-foreground">ColdTrans UAE</span>
         </Link>
 
         {/* Nav Links */}

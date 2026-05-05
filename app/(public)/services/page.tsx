@@ -2,8 +2,8 @@ import { services } from '@/lib/data'
 import { ServiceCard } from '@/components/service-card'
 
 export const metadata = {
-  title: 'Services | SmartPath Vans',
-  description: 'Add-on services to enhance your van rental experience. Insurance, GPS, camping gear, and more.',
+  title: 'Services | ColdTrans UAE',
+  description: 'Cold transport services for food delivery, pharmaceutical logistics, catering, and event refrigeration. Temperature-controlled solutions across UAE.',
 }
 
 export default function ServicesPage() {
@@ -12,9 +12,9 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Add-On Services</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Cold Transport Services</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Enhance your van rental experience with our premium add-on services designed to make your journey more comfortable and worry-free.
+            Professional cold chain logistics solutions for food delivery, pharmaceuticals, catering, and event refrigeration. Real-time monitoring available on all services.
           </p>
         </div>
       </section>
@@ -33,61 +33,52 @@ export default function ServicesPage() {
       {/* Service Details */}
       <section className="py-20 md:py-28 bg-card border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Service Details</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Our Cold Transport Services</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Airport Service */}
+            {/* Food Delivery */}
             <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Airport Pickup & Dropoff</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Food Delivery Transport</h3>
               <p className="text-muted-foreground mb-4">
-                Skip the hassle of rental car shuttles. We'll pick you up from any major airport and deliver your van directly to you. Same service applies for drop-off.
+                Reliable cold chain for restaurants, supermarkets, and food suppliers. Maintains optimal temperature for perishable goods across all UAE emirates. Ideal for daily deliveries.
               </p>
-              <p className="text-sm text-primary font-semibold">$49 per trip</p>
+              <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
 
-            {/* Insurance */}
+            {/* Pharmaceutical */}
             <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Insurance Coverage</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Pharmaceutical Logistics</h3>
               <p className="text-muted-foreground mb-4">
-                Get peace of mind with our comprehensive insurance coverage. Includes collision damage waiver, liability coverage, and roadside assistance.
+                Temperature-controlled transport for medicines, vaccines, and medical supplies. AED certified and fully compliant with pharmaceutical cold chain regulations.
               </p>
-              <p className="text-sm text-primary font-semibold">$19 per day</p>
+              <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
 
-            {/* GPS */}
+            {/* Catering */}
             <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">GPS Navigation System</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Catering Event Services</h3>
               <p className="text-muted-foreground mb-4">
-                Stay on course with our advanced GPS system featuring offline maps, voice navigation, and points of interest recommendations along your route.
+                Full event refrigeration solutions for weddings, conferences, and corporate events. Multiple van support available for large events with coordinated temperature management.
               </p>
-              <p className="text-sm text-primary font-semibold">$12 per day</p>
+              <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
 
-            {/* Camping */}
+            {/* Ice Cream */}
             <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Camping Package</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">Ice Cream & Frozen Goods</h3>
               <p className="text-muted-foreground mb-4">
-                Everything you need for outdoor camping. Includes tent, sleeping bags, camping chairs, portable stove, and cooking utensils.
+                Specialized deep freezer transport for ice cream shops, frozen desserts, and frozen food products. Maintains ultra-low temperatures for product quality.
               </p>
-              <p className="text-sm text-primary font-semibold">$79 per rental</p>
+              <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
 
-            {/* Pet */}
+            {/* 24/7 Emergency */}
             <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Pet Policy</h3>
+              <h3 className="text-xl font-semibold text-foreground mb-3">24/7 Emergency Transport</h3>
               <p className="text-muted-foreground mb-4">
-                Bring your furry friends on the adventure! Pet-friendly vans with extra cleaning included. Pets stay for free - we just ask for a small fee to cover cleaning.
+                Urgent same-day delivery available around the clock for critical shipments. Fast response times for perishable goods and emergency pharmaceutical needs.
               </p>
-              <p className="text-sm text-primary font-semibold">$25 per pet</p>
-            </div>
-
-            {/* Extra Driver */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Extra Driver</h3>
-              <p className="text-muted-foreground mb-4">
-                Add additional drivers to share the driving duties. Each extra driver is fully insured and covered under our comprehensive insurance policy.
-              </p>
-              <p className="text-sm text-primary font-semibold">$15 per driver</p>
+              <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
           </div>
         </div>
@@ -96,23 +87,23 @@ export default function ServicesPage() {
       {/* Why Choose Our Services */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Why Choose Our Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Why Choose ColdTrans for Your Logistics</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary font-bold">✓</span>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Transparent Pricing</h3>
-              <p className="text-muted-foreground">No hidden fees. All prices are clearly listed upfront.</p>
+              <h3 className="font-semibold text-foreground mb-2">Real-Time Monitoring</h3>
+              <p className="text-muted-foreground">24/7 GPS tracking and temperature alerts sent to your phone for complete peace of mind.</p>
             </div>
 
             <div className="text-center">
               <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <span className="text-primary font-bold">✓</span>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">Easy Customization</h3>
-              <p className="text-muted-foreground">Add or remove services anytime during the booking process.</p>
+              <h3 className="font-semibold text-foreground mb-2">Professional & Reliable</h3>
+              <p className="text-muted-foreground">AED certified vans with professional drivers. Trusted by food and pharma businesses across UAE.</p>
             </div>
 
             <div className="text-center">

@@ -11,13 +11,13 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold">
-                SP
+              <div className="h-8 w-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground font-bold text-xs">
+                ❄️
               </div>
-              <span className="font-semibold text-lg text-foreground">SmartPath Vans</span>
+              <span className="font-semibold text-lg text-foreground">ColdTrans UAE</span>
             </div>
             <p className="text-muted-foreground text-sm">
-              Your trusted partner for unforgettable van adventures.
+              Professional cold transport and refrigerated logistics solutions across UAE.
             </p>
           </div>
 
@@ -49,15 +49,15 @@ export function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-2 text-sm">
                 <Phone className="h-4 w-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground">+1 (555) 123-4567</span>
+                <span className="text-muted-foreground">+971 4 XXX XXXX</span>
               </div>
               <div className="flex items-start gap-2 text-sm">
                 <Mail className="h-4 w-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground">info@smartpath.com</span>
+                <span className="text-muted-foreground">info@coldtrans.ae</span>
               </div>
               <div className="flex items-start gap-2 text-sm">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span className="text-muted-foreground">123 Adventure Road, CA 94000</span>
+                <span className="text-muted-foreground">Dubai, United Arab Emirates</span>
               </div>
             </div>
           </div>

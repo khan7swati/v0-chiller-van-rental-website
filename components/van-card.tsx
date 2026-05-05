@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Users, Bed, Ruler, Zap } from 'lucide-react'
+import { Snowflake, Thermometer, Box } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
@@ -13,14 +13,15 @@ interface VanCardProps {
     type: string
     price: number
     capacity: number
-    beds: number
+    temperatureRange: string
     image: string
     description: string
     features: string[]
     specs: {
-      length: string
-      width: string
-      fuelEconomy: string
+      capacity: string
+      temperature: string
+      type: string
+      fuelType: string
     }
   }
 }
@@ -36,7 +37,7 @@ export function VanCard({ van }: VanCardProps) {
           className="object-cover hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">
-          ${van.price}/day
+          AED {van.price}/day
         </div>
       </div>
 
@@ -51,21 +52,21 @@ export function VanCard({ van }: VanCardProps) {
         <div className="grid grid-cols-3 gap-2 pb-4 border-b border-border">
           <div className="text-center">
             <div className="flex justify-center mb-1">
-              <Users className="h-4 w-4 text-primary" />
+              <Box className="h-4 w-4 text-primary" />
             </div>
-            <p className="text-xs font-semibold">{van.capacity} guests</p>
+            <p className="text-xs font-semibold">{van.specs.capacity}</p>
           </div>
           <div className="text-center">
             <div className="flex justify-center mb-1">
-              <Bed className="h-4 w-4 text-primary" />
+              <Thermometer className="h-4 w-4 text-primary" />
             </div>
-            <p className="text-xs font-semibold">{van.beds} beds</p>
+            <p className="text-xs font-semibold">{van.specs.temperature}</p>
           </div>
           <div className="text-center">
             <div className="flex justify-center mb-1">
-              <Zap className="h-4 w-4 text-primary" />
+              <Snowflake className="h-4 w-4 text-primary" />
             </div>
-            <p className="text-xs font-semibold">{van.specs.fuelEconomy}</p>
+            <p className="text-xs font-semibold">{van.specs.type}</p>
           </div>
         </div>
 

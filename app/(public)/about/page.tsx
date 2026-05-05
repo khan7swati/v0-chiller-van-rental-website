@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { ArrowRight, Heart, Users, MapPin, Zap } from 'lucide-react'
 
 export const metadata = {
-  title: 'About Us | SmartPath Vans',
-  description: 'Learn about SmartPath Vans - your trusted partner for premium van rentals and unforgettable adventures.',
+  title: 'About Us | ColdTrans UAE',
+  description: 'Learn about ColdTrans UAE - your trusted partner for professional cold chain logistics and refrigerated transport solutions.',
 }
 
 export default function AboutPage() {
@@ -14,9 +14,9 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About SmartPath Vans</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">About ColdTrans UAE</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            We&apos;re dedicated to making van life accessible to everyone. With quality vans and exceptional service, we make your adventure dreams a reality.
+            Your trusted partner for professional cold chain logistics and temperature-controlled transport solutions across the UAE.
           </p>
         </div>
       </section>
@@ -26,15 +26,15 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Mission</h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                SmartPath Vans was founded in 2019 by a group of travel enthusiasts who wanted to make van life accessible and affordable for everyone. What started as a small fleet of 2 vans has grown to become a trusted name in the van rental industry.
+                ColdTrans UAE is your premier cold chain logistics partner, serving food delivery companies, pharmaceutical businesses, and catering services across the UAE since 2015. We specialize in professional temperature-controlled transport with reliability you can count on.
               </p>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                We believe that the freedom of the open road should be within reach for all. That&apos;s why we focus on providing quality vans, transparent pricing, and exceptional customer service.
+                We understand that maintaining proper temperature is critical for food safety and pharmaceutical integrity. That&apos;s why we invest in modern refrigerated vehicles, advanced monitoring systems, and highly trained professional drivers.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Today, we&apos;ve served over 500 happy travelers, and our mission remains the same: to help you create unforgettable memories on the road.
+                With a track record of thousands of successful deliveries, our mission is to be the most reliable cold transport provider in UAE, ensuring your perishable goods arrive safely, on time, and at the perfect temperature.
               </p>
             </div>
 
@@ -57,20 +57,20 @@ export default function AboutPage() {
             <Card>
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Heart className="h-6 w-6 text-primary" />
+                  <Zap className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Passion</h3>
-                <p className="text-sm text-muted-foreground">We love what we do and it shows in every interaction with our customers.</p>
+                <h3 className="font-semibold text-foreground mb-2">Reliability</h3>
+                <p className="text-sm text-muted-foreground">On-time deliveries and consistent temperature maintenance you can depend on.</p>
               </CardContent>
             </Card>
 
             <Card>
               <CardContent className="pt-6">
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Zap className="h-6 w-6 text-primary" />
+                  <Heart className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">Quality</h3>
-                <p className="text-sm text-muted-foreground">Every van in our fleet is meticulously maintained to the highest standards.</p>
+                <p className="text-sm text-muted-foreground">Premium vehicles and advanced monitoring systems for peace of mind.</p>
               </CardContent>
             </Card>
 
@@ -79,8 +79,8 @@ export default function AboutPage() {
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Users className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Community</h3>
-                <p className="text-sm text-muted-foreground">We build lasting relationships with our customers and fellow adventurers.</p>
+                <h3 className="font-semibold text-foreground mb-2">Professionalism</h3>
+                <p className="text-sm text-muted-foreground">Expert drivers, AED certification, and adherence to cold chain standards.</p>
               </CardContent>
             </Card>
 
@@ -89,8 +89,8 @@ export default function AboutPage() {
                 <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <MapPin className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Adventure</h3>
-                <p className="text-sm text-muted-foreground">We celebrate the spirit of exploration and discovery in every journey.</p>
+                <h3 className="font-semibold text-foreground mb-2">Coverage</h3>
+                <p className="text-sm text-muted-foreground">Reliable service across all UAE emirates with rapid response times.</p>
               </CardContent>
             </Card>
           </div>
@@ -100,7 +100,7 @@ export default function AboutPage() {
       {/* Why Choose Us */}
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Why Choose SmartPath?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Why Choose ColdTrans UAE?</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="flex gap-4">
@@ -108,8 +108,8 @@ export default function AboutPage() {
                 <span className="text-primary font-bold">✓</span>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">Well-Maintained Fleet</h3>
-                <p className="text-muted-foreground">All vans undergo regular maintenance and detailed inspections before each rental.</p>
+                <h3 className="font-semibold text-foreground mb-2">Modern Refrigerated Fleet</h3>
+                <p className="text-muted-foreground">Well-maintained vans with advanced temperature control and real-time monitoring systems.</p>
               </div>
             </div>
 
@@ -118,8 +118,8 @@ export default function AboutPage() {
                 <span className="text-primary font-bold">✓</span>
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-2">Transparent Pricing</h3>
-                <p className="text-muted-foreground">No hidden fees. Everything is clearly outlined so you know what to expect.</p>
+                <h3 className="font-semibold text-foreground mb-2">Certified & Compliant</h3>
+                <p className="text-muted-foreground">AED certified for food and pharmaceutical transport with adherence to UAE cold chain regulations.</p>
               </div>
             </div>
 

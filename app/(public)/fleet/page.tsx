@@ -2,8 +2,8 @@ import { vans } from '@/lib/data'
 import { VanCard } from '@/components/van-card'
 
 export const metadata = {
-  title: 'Our Fleet | SmartPath Vans',
-  description: 'Browse our premium collection of vans for rent. From compact to luxury, find the perfect van for your adventure.',
+  title: 'Our Fleet | ColdTrans UAE',
+  description: 'Browse our chiller and freezer van fleet. 1-ton to 8-ton capacity with temperatures from -25°C to +5°C for food, pharma, and catering transport.',
 }
 
 export default function FleetPage() {
@@ -12,9 +12,9 @@ export default function FleetPage() {
       {/* Hero Section */}
       <section className="py-12 md:py-20 bg-card border-b border-border">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Fleet</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Our Chiller & Freezer Fleet</h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Explore our carefully curated collection of premium vans. Each van is maintained to the highest standards and equipped with modern amenities for your comfort.
+            Professional refrigerated vans for food delivery, pharmaceutical transport, and catering logistics. All vans equipped with real-time temperature monitoring and GPS tracking across UAE.
           </p>
         </div>
       </section>
@@ -41,9 +41,9 @@ export default function FleetPage() {
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 font-semibold">Van Model</th>
                   <th className="text-left py-4 px-4 font-semibold">Capacity</th>
-                  <th className="text-left py-4 px-4 font-semibold">Beds</th>
-                  <th className="text-left py-4 px-4 font-semibold">Length</th>
-                  <th className="text-left py-4 px-4 font-semibold">Fuel Economy</th>
+                  <th className="text-left py-4 px-4 font-semibold">Temperature</th>
+                  <th className="text-left py-4 px-4 font-semibold">Volume</th>
+                  <th className="text-left py-4 px-4 font-semibold">Type</th>
                   <th className="text-left py-4 px-4 font-semibold">Price/Day</th>
                 </tr>
               </thead>
@@ -51,11 +51,11 @@ export default function FleetPage() {
                 {vans.map((van) => (
                   <tr key={van.id} className="border-b border-border hover:bg-muted/50 transition">
                     <td className="py-4 px-4 font-medium">{van.name}</td>
-                    <td className="py-4 px-4">{van.capacity} people</td>
-                    <td className="py-4 px-4">{van.beds}</td>
-                    <td className="py-4 px-4">{van.specs.length}</td>
-                    <td className="py-4 px-4">{van.specs.fuelEconomy}</td>
-                    <td className="py-4 px-4 font-semibold text-primary">${van.price}</td>
+                    <td className="py-4 px-4">{van.specs.capacity}</td>
+                    <td className="py-4 px-4">{van.specs.temperature}</td>
+                    <td className="py-4 px-4">{van.specs.volume || 'N/A'}</td>
+                    <td className="py-4 px-4">{van.specs.type}</td>
+                    <td className="py-4 px-4 font-semibold text-primary">AED {van.price}</td>
                   </tr>
                 ))}
               </tbody>
@@ -71,27 +71,27 @@ export default function FleetPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold text-foreground">Standard Amenities</h3>
+              <h3 className="text-xl font-semibold text-foreground">Standard Features</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Comfortable sleeping areas
+                  Precision temperature control
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Full kitchen facilities
+                  Insulated cargo area
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Climate control
+                  Digital temperature display
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Modern entertainment system
+                  Backup power system
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  USB charging ports
+                  Professional maintenance
                 </li>
               </ul>
             </div>
@@ -101,19 +101,19 @@ export default function FleetPage() {
               <ul className="space-y-2 text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Solar power systems
+                  Real-time GPS tracking
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  Advanced safety features
+                  Temperature SMS/Email alerts
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  GPS navigation
+                  24/7 monitoring capability
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  WiFi connectivity
+                  Full insurance coverage
                 </li>
                 <li className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />

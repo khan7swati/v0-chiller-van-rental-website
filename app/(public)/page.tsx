@@ -22,39 +22,39 @@ export default function HomePage() {
               <div className="space-y-6">
                 <div className="space-y-2">
                   <h1 className="text-4xl md:text-5xl font-bold text-foreground text-pretty">
-                    Your Freedom Starts Here
+                    Chiller & Freezer Van Rental in UAE – Reliable Cold Transport 24/7
                   </h1>
                   <p className="text-xl text-muted-foreground text-pretty">
-                    Experience the ultimate van life with SmartPath. Premium vans, unforgettable adventures.
+                    Professional temperature-controlled logistics for food, pharmaceuticals, and catering across UAE. Temperature range -25°C to +5°C.
                   </p>
                 </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/booking">
                   <Button size="lg" className="w-full sm:w-auto">
-                    Book Your Van <ArrowRight className="ml-2 h-4 w-4" />
+                    Get Quote <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/fleet">
+                <a href="https://wa.me/971" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    View Our Fleet
+                    WhatsApp Now
                   </Button>
-                </Link>
+                </a>
               </div>
 
-              {/* Features */}
+              {/* Key Features */}
               <div className="grid grid-cols-3 gap-4 pt-6">
                 <div>
-                  <p className="font-bold text-lg text-primary">500+</p>
-                  <p className="text-sm text-muted-foreground">Happy Travelers</p>
-                </div>
-                <div>
-                  <p className="font-bold text-lg text-primary">4 Vans</p>
-                  <p className="text-sm text-muted-foreground">Premium Fleet</p>
+                  <p className="font-bold text-lg text-primary">-25°C to +5°C</p>
+                  <p className="text-sm text-muted-foreground">Temperature Range</p>
                 </div>
                 <div>
                   <p className="font-bold text-lg text-primary">24/7</p>
-                  <p className="text-sm text-muted-foreground">Support</p>
+                  <p className="text-sm text-muted-foreground">Availability</p>
+                </div>
+                <div>
+                  <p className="font-bold text-lg text-primary">All UAE</p>
+                  <p className="text-sm text-muted-foreground">Coverage</p>
                 </div>
               </div>
               </div>
@@ -107,9 +107,9 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection>
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Premium Fleet</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Our Chiller & Freezer Fleet</h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                From cozy compact vans to luxurious full-size retreats, we have the perfect van for your adventure.
+                Choose from 1-ton to 8-ton capacity vans with temperatures ranging from -25°C to +5°C. All equipped with real-time monitoring.
               </p>
             </div>
           </AnimatedSection>
