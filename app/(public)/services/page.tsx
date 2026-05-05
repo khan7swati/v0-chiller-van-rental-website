@@ -8,19 +8,19 @@ export const metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-card border-b border-border">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-slate-50">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Cold Transport Services</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Professional cold chain logistics solutions for food delivery, pharmaceuticals, catering, and event refrigeration. Real-time monitoring available on all services.
+          <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6">Cold chain solutions</h1>
+          <p className="text-xl text-slate-700 max-w-2xl">
+            Tailored cold transport services for food, pharmaceuticals, catering, and events. Available 24/7 across all UAE emirates with real-time monitoring.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
@@ -31,53 +31,52 @@ export default function ServicesPage() {
       </section>
 
       {/* Service Details */}
-      <section className="py-20 md:py-28 bg-card border-t border-border">
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">Our Cold Transport Services</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-12 text-center">Our services</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Food Delivery */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Food Delivery Transport</h3>
-              <p className="text-muted-foreground mb-4">
-                Reliable cold chain for restaurants, supermarkets, and food suppliers. Maintains optimal temperature for perishable goods across all UAE emirates. Ideal for daily deliveries.
+            <div className="p-8 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Food Delivery Transport</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Reliable cold chain solutions for restaurants, supermarkets, and food suppliers. Maintains optimal temperatures across all UAE emirates for daily deliveries.
               </p>
-              <p className="text-sm text-primary font-semibold">Included with all vans</p>
+              <p className="text-sm text-slate-500 font-medium">Standard on all vehicles</p>
             </div>
 
             {/* Pharmaceutical */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Pharmaceutical Logistics</h3>
-              <p className="text-muted-foreground mb-4">
-                Temperature-controlled transport for medicines, vaccines, and medical supplies. AED certified and fully compliant with pharmaceutical cold chain regulations.
+            <div className="p-8 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Pharmaceutical Logistics</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Temperature-controlled transport for medicines and vaccines. Fully compliant with pharmaceutical cold chain regulations and industry standards.
               </p>
-              <p className="text-sm text-primary font-semibold">Included with all vans</p>
+              <p className="text-sm text-slate-500 font-medium">Standard on all vehicles</p>
             </div>
 
             {/* Catering */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Catering Event Services</h3>
-              <p className="text-muted-foreground mb-4">
-                Full event refrigeration solutions for weddings, conferences, and corporate events. Multiple van support available for large events with coordinated temperature management.
+            <div className="p-8 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Catering & Events</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Full refrigeration solutions for weddings, conferences, and corporate events. Multiple van coordination available for large-scale events.
               </p>
-              <p className="text-sm text-primary font-semibold">Included with all vans</p>
+              <p className="text-sm text-slate-500 font-medium">Standard on all vehicles</p>
             </div>
 
-            {/* Ice Cream */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">Ice Cream & Frozen Goods</h3>
-              <p className="text-muted-foreground mb-4">
-                Specialized deep freezer transport for ice cream shops, frozen desserts, and frozen food products. Maintains ultra-low temperatures for product quality.
+            {/* Frozen Goods */}
+            <div className="p-8 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">Frozen Goods Transport</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Specialized deep-freezer transport for ice cream, frozen desserts, and frozen food products. Maintains ultra-low temperatures for product integrity.
               </p>
-              <p className="text-sm text-primary font-semibold">Included with all vans</p>
+              <p className="text-sm text-slate-500 font-medium">Standard on all vehicles</p>
             </div>
 
             {/* 24/7 Emergency */}
-            <div className="p-6 border border-border rounded-lg">
-              <h3 className="text-xl font-semibold text-foreground mb-3">24/7 Emergency Transport</h3>
-              <p className="text-muted-foreground mb-4">
-                Urgent same-day delivery available around the clock for critical shipments. Fast response times for perishable goods and emergency pharmaceutical needs.
-              </p>
+            <div className="p-8 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+              <h3 className="text-2xl font-semibold text-slate-900 mb-4">24/7 Emergency Service</h3>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Rapid same-day delivery available around the clock for critical shipments, emergencies, and urgent pharmaceutical needs.</p>
               <p className="text-sm text-primary font-semibold">Included with all vans</p>
             </div>
           </div>

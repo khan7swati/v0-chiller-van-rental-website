@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
 
 export default function ContactPage() {
@@ -12,9 +11,11 @@ export default function ContactPage() {
     name: '',
     email: '',
     phone: '',
-    subject: '',
+    company: '',
+    service: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
@@ -23,247 +24,204 @@ export default function ContactPage() {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Contact form submitted:', formData)
+    setIsSubmitting(true)
     
-    toast({
-      title: 'Message Sent!',
-      description: 'Thank you for contacting us. We will get back to you within 24 hours.',
-    })
+    try {
+      console.log('Contact form submitted:', formData)
+      toast({
+        title: 'Message Sent!',
+        description: 'Thank you for contacting us. Our team will respond within 1 hour.',
+      })
 
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: '',
-    })
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        service: '',
+        message: '',
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 bg-card border-b border-border">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-white to-slate-50">
         <div className="container mx-auto px-4 md:px-6">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact ColdTrans UAE</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            Need cold transport solutions? Get in touch with our team for quotes, inquiries, or support. Available 24/7 for your urgent needs.
+          <h1 className="text-5xl md:text-6xl font-serif font-bold text-slate-900 mb-6">Get in touch</h1>
+          <p className="text-xl text-slate-700 max-w-2xl">
+            Need cold transport solutions? Contact our team for quotes, inquiries, or 24/7 support. We respond within one hour.
           </p>
         </div>
       </section>
 
-      {/* Contact Info Cards */}
-      <section className="py-12 md:py-20">
+      {/* Contact Info & Form */}
+      <section className="py-20 md:py-28 bg-white">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <Card>
-              <CardContent className="pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Phone className="h-6 w-6 text-primary" />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div>
+                <div className="h-12 w-12 rounded-full bg-slate-900 flex items-center justify-center mb-4">
+                  <Phone className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                <p className="text-muted-foreground text-sm">+971 4 XXX XXXX</p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Phone</h3>
+                <p className="text-slate-700">+971 4 XXX XXXX</p>
+                <p className="text-slate-500 text-sm mt-1">Available 24/7</p>
+              </div>
 
-            <Card>
-              <CardContent className="pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Mail className="h-6 w-6 text-primary" />
+              <div>
+                <div className="h-12 w-12 rounded-full bg-slate-900 flex items-center justify-center mb-4">
+                  <Mail className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Email</h3>
-                <p className="text-muted-foreground text-sm">info@coldtrans.ae</p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Email</h3>
+                <p className="text-slate-700">info@coldtrans.ae</p>
+                <p className="text-slate-500 text-sm mt-1">Response within 1 hour</p>
+              </div>
 
-            <Card>
-              <CardContent className="pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <MapPin className="h-6 w-6 text-primary" />
+              <div>
+                <div className="h-12 w-12 rounded-full bg-slate-900 flex items-center justify-center mb-4">
+                  <MapPin className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-muted-foreground text-sm">Dubai & Abu Dhabi, UAE</p>
-              </CardContent>
-            </Card>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Location</h3>
+                <p className="text-slate-700">Dubai, United Arab Emirates</p>
+                <p className="text-slate-500 text-sm mt-1">Serving all emirates</p>
+              </div>
 
-            <Card>
-              <CardContent className="pt-6">
-                <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Clock className="h-6 w-6 text-primary" />
+              <div>
+                <div className="h-12 w-12 rounded-full bg-slate-900 flex items-center justify-center mb-4">
+                  <Clock className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Hours</h3>
-                <p className="text-muted-foreground text-sm">24/7 Emergency Support</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
+                <h3 className="text-xl font-semibold text-slate-900 mb-2">Hours</h3>
+                <p className="text-slate-700">24 Hours</p>
+                <p className="text-slate-500 text-sm mt-1">Every day of the week</p>
+              </div>
+            </div>
 
-      {/* Contact Form & Map */}
-      <section className="py-12 md:py-20 bg-card border-t border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
-              <h2 className="text-2xl font-bold text-foreground mb-6">Request a Quote or Inquiry</h2>
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold mb-2">
-                    Your Name
-                  </label>
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-                  />
+            <div className="lg:col-span-2">
+              <form onSubmit={handleSubmit} className="space-y-6 bg-slate-50 p-10 rounded-lg border-2 border-slate-200">
+                <h2 className="text-2xl font-semibold text-slate-900 mb-8">Send us a message</h2>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">Full Name</label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your name"
+                      required
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">Email Address</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="your.email@company.com"
+                      required
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">Phone Number</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+971 XX XXX XXXX"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-slate-900 mb-2">Company Name</label>
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Your company"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    id="phone"
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-semibold mb-2">
-                    Subject
-                  </label>
+                  <label className="block text-sm font-medium text-slate-900 mb-2">Service Needed</label>
                   <select
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
+                    name="service"
+                    value={formData.service}
                     onChange={handleChange}
-                    required
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900"
                   >
-                    <option value="">Select a subject...</option>
-                    <option value="booking">Booking Inquiry</option>
-                    <option value="pricing">Pricing Question</option>
-                    <option value="support">Technical Support</option>
-                    <option value="feedback">Feedback</option>
+                    <option value="">Select a service</option>
+                    <option value="food-delivery">Food Delivery Transport</option>
+                    <option value="pharma">Pharmaceutical Logistics</option>
+                    <option value="catering">Catering & Events</option>
+                    <option value="frozen-goods">Frozen Goods Transport</option>
+                    <option value="emergency">Emergency Service</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold mb-2">
-                    Message
-                  </label>
+                  <label className="block text-sm font-medium text-slate-900 mb-2">Message</label>
                   <textarea
-                    id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
+                    placeholder="Tell us about your cold transport needs..."
+                    rows={6}
                     required
-                    rows={5}
-                    className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground resize-none"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent bg-white text-slate-900 resize-none"
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 font-medium flex items-center justify-center gap-2"
+                >
+                  <Send className="h-5 w-5" />
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
-              </form>
-            </div>
 
-            {/* Info & Map Placeholder */}
-            <div className="space-y-6">
-              <div>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h2>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Whether you have questions about our vans, need help with a booking, or want to share feedback, our friendly team is ready to assist. We respond to all inquiries within 24 hours.
+                <p className="text-xs text-slate-600 text-center">
+                  We typically respond within 1 hour during business hours. For urgent requests, please call us directly.
                 </p>
-
-                <div className="space-y-4">
-                  <div className="border border-border rounded-lg p-4">
-                    <h3 className="font-semibold text-foreground mb-2">Business Hours</h3>
-                    <div className="space-y-1 text-sm text-muted-foreground">
-                      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p>Saturday: 10:00 AM - 4:00 PM</p>
-                      <p>Sunday: 12:00 PM - 4:00 PM</p>
-                      <p className="pt-2 text-primary font-semibold">24/7 Emergency Support</p>
-                    </div>
-                  </div>
-
-                  <div className="border border-border rounded-lg p-4">
-                    <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Visit our headquarters to see our vans in person or discuss your rental needs.
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      123 Adventure Road<br />
-                      San Francisco, CA 94000<br />
-                      United States
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="relative h-64 bg-muted rounded-lg border border-border flex items-center justify-center overflow-hidden">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="h-12 w-12 mx-auto mb-2 opacity-30" />
-                  <p className="text-sm">Google Map</p>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 md:py-28">
+      {/* Service Areas */}
+      <section className="py-20 md:py-28 bg-slate-50">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Frequently Asked Questions</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">How quickly do you respond to inquiries?</h3>
-              <p className="text-muted-foreground text-sm">We typically respond within 24 hours during business hours. Emergency support is available 24/7.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Can I call you directly?</h3>
-              <p className="text-muted-foreground text-sm">Yes! Call us at +1 (555) 123-4567 during business hours or use our 24/7 emergency line.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">Do you offer group discounts?</h3>
-              <p className="text-muted-foreground text-sm">Absolutely! Contact our sales team for group bookings and special rates on multiple vans.</p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-foreground mb-2">How can I provide feedback?</h3>
-              <p className="text-muted-foreground text-sm">We&apos;d love to hear from you! Use this contact form or email us directly at feedback@smartpath.com</p>
-            </div>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-12 text-center">Service areas</h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            {['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Umm Al Quwain', 'Ras Al Khaimah', 'Fujairah', 'All Emirates'].map((emirate) => (
+              <div key={emirate} className="p-6 bg-white border-2 border-slate-200 rounded-lg hover:border-slate-900 transition">
+                <p className="font-semibold text-slate-900">{emirate}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

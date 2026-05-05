@@ -16,34 +16,32 @@ interface TestimonialCardProps {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="hover:shadow-md transition-shadow">
-      <CardContent className="pt-6">
-        {/* Stars */}
-        <div className="flex gap-1 mb-3">
-          {Array.from({ length: testimonial.rating }).map((_, i) => (
-            <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-          ))}
-        </div>
+    <div className="bg-white border-2 border-slate-200 rounded-lg p-6 hover:border-slate-900 transition-all">
+      {/* Stars */}
+      <div className="flex gap-1 mb-4">
+        {Array.from({ length: testimonial.rating }).map((_, i) => (
+          <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+        ))}
+      </div>
 
-        {/* Testimonial Text */}
-        <p className="text-foreground mb-4 leading-relaxed">&quot;{testimonial.text}&quot;</p>
+      {/* Testimonial Text */}
+      <p className="text-slate-700 mb-6 leading-relaxed italic">&quot;{testimonial.text}&quot;</p>
 
-        {/* Author */}
-        <div className="flex items-center gap-3">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-muted">
-            <Image
-              src={testimonial.image}
-              alt={testimonial.name}
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div>
-            <p className="font-semibold text-sm">{testimonial.name}</p>
-            <p className="text-xs text-muted-foreground">Verified Traveler</p>
-          </div>
+      {/* Author */}
+      <div className="flex items-center gap-4 pt-4 border-t border-slate-200">
+        <div className="relative h-12 w-12 overflow-hidden rounded-full bg-slate-200 flex-shrink-0">
+          <Image
+            src={testimonial.image}
+            alt={testimonial.name}
+            fill
+            className="object-cover"
+          />
         </div>
-      </CardContent>
-    </Card>
+        <div>
+          <p className="font-semibold text-slate-900">{testimonial.name}</p>
+          <p className="text-xs text-slate-600">Verified Client</p>
+        </div>
+      </div>
+    </div>
   )
 }
