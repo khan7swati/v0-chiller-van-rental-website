@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Zap, Users, Globe } from 'lucide-react'
+import { ArrowRight, Zap, Users, Globe, CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { vans, testimonials } from '@/lib/data'
 import { VanCard } from '@/components/van-card'
@@ -9,79 +9,103 @@ import { TestimonialCard } from '@/components/testimonial-card'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="py-16 md:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-pretty">
-              Short-term refrigerated vehicle rental
+      <section className="relative py-32 md:py-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 dark:from-primary/20 dark:to-secondary/20" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-3xl opacity-20 dark:opacity-30 bg-gradient-to-br from-primary to-accent" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-3xl opacity-15 dark:opacity-25 bg-gradient-to-tr from-secondary to-primary" />
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="inline-block mb-6">
+              <span className="px-4 py-2 rounded-full text-sm font-semibold bg-primary/10 text-primary dark:bg-primary/20 border border-primary/20 dark:border-primary/30">
+                Cold Chain Solutions
+              </span>
+            </div>
+            
+            <h1 className="text-6xl md:text-8xl font-serif font-bold text-foreground mb-8 leading-tight text-pretty">
+              Enterprise Refrigerated Logistics
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 text-pretty">
-              Our fleet is ready to go! Rent for short periods starting at 24 hours, with no commitment. For emergencies, breakdowns or peak periods, we&apos;re here to help.
+            
+            <p className="text-xl md:text-2xl text-foreground/70 mb-12 text-pretty max-w-3xl leading-relaxed">
+              Precision temperature-controlled transport for food, pharmaceutical, and catering businesses. 24/7 availability with real-time monitoring and full compliance across the UAE.
             </p>
-            <div className="inline-block">
-              <h3 className="text-lg font-semibold text-foreground mb-4">Full Service hire</h3>
-              <p className="text-muted-foreground mb-6">
-                Enjoy a comprehensive service that covers all safety, maintenance and repair work.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Rental Quote Form Section */}
-      <section className="py-16 md:py-20 bg-card border-t border-b border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-2xl font-bold text-foreground mb-8 text-center">Get your Quote</h2>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-            {/* Departure & Return */}
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">Departure</label>
-              <select className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground">
-                <option>Start of rental period</option>
-                <option>08:00</option>
-                <option>09:00</option>
-                <option>10:00</option>
-                <option>11:00</option>
-                <option>12:00</option>
-              </select>
-            </div>
-
-            {/* Return Date */}
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">Return</label>
-              <input type="date" className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground" />
-            </div>
-
-            {/* Duration */}
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">Duration</label>
-              <select className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-white text-foreground">
-                <option>Select duration</option>
-                <option>1 to 30 days</option>
-                <option>1 to 12 months</option>
-                <option>Over 12 months</option>
-              </select>
-            </div>
-
-            {/* Request Quote Button */}
-            <div className="flex items-end">
-              <Link href="/booking" className="w-full">
-                <Button size="lg" className="w-full">
-                  Request a quote
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/booking">
+                <Button size="lg" className="px-8 py-6 text-lg font-semibold">
+                  Request a Quote <ArrowRight className="ml-3 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link href="#features">
+                <Button size="lg" variant="outline" className="px-8 py-6 text-lg font-semibold">
+                  Learn More
                 </Button>
               </Link>
             </div>
+            
+            {/* Stats */}
+            <div className="mt-20 grid grid-cols-3 gap-8 pt-12 border-t border-border/50">
+              {[
+                { number: '500+', label: 'Vehicles Fleet' },
+                { number: '24/7', label: 'Availability' },
+                { number: '100%', label: 'Compliant' }
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <p className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</p>
+                  <p className="text-foreground/60">{stat.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <p className="text-center text-sm text-muted-foreground">For business customers</p>
         </div>
       </section>
 
-      {/* Our Range Section */}
-      <section className="py-16 md:py-24 bg-white">
+      {/* Why Choose Us Section */}
+      <section id="features" className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Our range of refrigerated vehicles</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-16 text-center">Why choose ColdTrans UAE?</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: <CheckCircle2 className="h-8 w-8 text-primary" />,
+                title: "Specialized Expertise",
+                description: "100% focused on refrigerated logistics with deep expertise across food, pharma, and catering sectors."
+              },
+              {
+                icon: <Zap className="h-8 w-8 text-primary" />,
+                title: "24/7 Network",
+                description: "Round-the-clock support across all UAE emirates with rapid response for emergencies."
+              },
+              {
+                icon: <Users className="h-8 w-8 text-primary" />,
+                title: "Professional Team",
+                description: "Experienced drivers and support staff trained in cold chain best practices and safety standards."
+              },
+              {
+                icon: <Globe className="h-8 w-8 text-primary" />,
+                title: "Flexible Solutions",
+                description: "Tailored rental packages starting from 24 hours with no long-term commitment required."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="space-y-4 p-6 rounded-lg border border-border bg-card hover:border-primary/50 transition-colors">
+                <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  {item.icon}
+                </div>
+                <h3 className="font-semibold text-foreground text-lg">{item.title}</h3>
+                <p className="text-foreground/70">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Fleet Section */}
+      <section className="py-20 md:py-28 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-16 text-center">Our refrigerated fleet</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {vans.map((van) => (
@@ -92,66 +116,17 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/fleet">
               <Button variant="outline" size="lg">
-                See All Vans <ArrowRight className="ml-2 h-4 w-4" />
+                View All Vehicles <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-16 md:py-24 bg-white border-t border-b border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">Why rent from ColdTrans UAE?</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Zap className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-foreground mb-2">Specialized Cold Transport</h3>
-              <p className="text-sm text-muted-foreground">
-                100% focused on refrigerated logistics with expertise across food, pharma, and catering sectors.
-              </p>
-            </div>
-
-            <div>
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-foreground mb-2">500+ Experts</h3>
-              <p className="text-sm text-muted-foreground">
-                Trained professionals delivering best-in-class service and support for all your transport needs.
-              </p>
-            </div>
-
-            <div>
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <Globe className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-foreground mb-2">24/7 Network Coverage</h3>
-              <p className="text-sm text-muted-foreground">
-                Comprehensive support across all UAE emirates with rapid response for emergencies and peak periods.
-              </p>
-            </div>
-
-            <div>
-              <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                <ArrowRight className="h-6 w-6 text-primary" />
-              </div>
-              <h3 className="font-bold text-foreground mb-2">Sustainable Solutions</h3>
-              <p className="text-sm text-muted-foreground">
-                Modern fleet with eco-friendly technology and commitment to green cold transport initiatives.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Featured Testimonials */}
-      <section className="py-16 md:py-24 bg-white">
+      <section className="py-20 md:py-28 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">What Our Business Customers Say</h2>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-16 text-center">What our clients say</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial) => (
@@ -162,15 +137,16 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 bg-foreground text-white">
-        <div className="container mx-auto px-4 md:px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">ColdTrans UAE also offers…</h2>
-          <p className="text-lg opacity-90 mb-8 max-w-2xl mx-auto">
-            The network to promptly respond to your needs, 24-hour assistance, innovation in sustainable solutions, and dedicated support for your logistics challenges.
+      <section className="relative py-20 md:py-28 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-10 dark:opacity-20" />
+        <div className="container mx-auto px-4 md:px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Ready to get started?</h2>
+          <p className="text-lg text-foreground/70 mb-12 max-w-2xl mx-auto">
+            Contact our team for a personalized quote or to discuss your specific cold chain requirements.
           </p>
-          <Link href="/contact">
-            <Button size="lg" variant="outline" className="bg-white text-foreground hover:bg-white/90">
-              Get In Touch <ArrowRight className="ml-2 h-4 w-4" />
+          <Link href="/booking">
+            <Button size="lg">
+              Request a Quote <ArrowRight className="ml-3 h-5 w-5" />
             </Button>
           </Link>
         </div>

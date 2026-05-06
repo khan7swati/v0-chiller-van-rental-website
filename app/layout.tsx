@@ -8,8 +8,8 @@ const geist = Geist({ subsets: ["latin"], variable: '--font-geist' })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: '--font-geist-mono' })
 
 export const metadata: Metadata = {
-  title: 'SmartPath Vans | Premium Van Rentals',
-  description: 'Explore the freedom of the open road with SmartPath Vans. Premium van rentals for your adventure.',
+  title: 'ColdTrans UAE | Refrigerated Vehicle Rental',
+  description: 'Enterprise refrigerated logistics solutions for food, pharmaceutical, and catering businesses across the UAE. 24/7 availability with real-time monitoring.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -32,8 +32,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f172a' }
+    { media: '(prefers-color-scheme: light)', color: '#f8f8f8' },
+    { media: '(prefers-color-scheme: dark)', color: '#1a1a1a' }
   ],
   width: 'device-width',
   initialScale: 1,
